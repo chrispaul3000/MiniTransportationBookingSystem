@@ -56,7 +56,13 @@ export const getUserBookings = async (req, res) => {
 
 export const updateBookingStatus = async (req, res) => {
     try {
-    const {status} = req.body;
+    const {status} = req.params;
+
+    const validStatuses = ['pending', 'confirmed', 'completed', 'cancelled'];
+    if (!validStatuses.includes(status)) {
+        return res.status(400).json({message: "Invalid status value"});
+    }
+    
     const booking = await Booking.findByIdAndUpdate(
         req.params.id,
         {status},

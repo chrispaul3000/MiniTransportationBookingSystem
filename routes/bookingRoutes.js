@@ -7,7 +7,7 @@ router.post("/bookings", createBooking);
 router.get("/bookings", getBookings);
 router.get("/bookings/:id", getBookingById);
 router.get("/bookings/user/:userId", getUserBookings);
-router.put("/bookings/:id/status", updateBookingStatus);
+router.put("/bookings/:id/:status", updateBookingStatus);
 router.delete("/bookings/:id", deleteBooking);
 
 export default router;
