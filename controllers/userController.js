@@ -15,7 +15,7 @@ export const createUser = async (req, res) => {
         contact_number,
         role
     });
-    res.status(201).json(newUser);
+    res.status(201).json({message: "User created successfully", user: newUser});
 
 }catch (error) {
     res.status(500).json({message: "Server Error", error: error.message});
@@ -62,7 +62,7 @@ export const updateUser = async (req, res) => {
     if (!user) {
         return res.status(404).json({message: "User not found"});
     }
-    res.status(200).json(user);
+    res.status(200).json({message: "User updated successfully", user});
 } catch (error) {
     res.status(500).json({message: "Server Error", error: error.message});
 }};
