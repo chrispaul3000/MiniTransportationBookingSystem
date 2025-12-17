@@ -4,7 +4,7 @@ export const createUser = async (req, res) => {
     try {
     const {name, email, contact_number, role} = req.body;
     
-    if(!name || !email || !contact_number){
+    if(!name || !email || !contact_number || !role){
         return res.status(400).json({message: "all fields are required"});
         return
     }
