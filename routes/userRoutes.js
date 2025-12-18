@@ -5,9 +5,9 @@ const router = express.Router();
 
 router.post('/users', createUser);
 router.get('/users', getUsers);
-router.get('/users/:id', getUserById);
 router.get('/users/passengers', getPassengers);
 router.get('/users/drivers', getDrivers);
+router.get('/users/:id', getUserById);
 router.put('/users/:id', updateUser);
 router.delete('/users/:id', deleteUser);
 
